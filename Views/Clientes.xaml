@@ -5,36 +5,52 @@
              Title="Clientes">
     <!-- Contenedor principal StackLayout -->
     <StackLayout Padding="10" Spacing="10">
-        <!-- Contenedor de los botones -->
+
+        <!-- Header con título y botón para cerrar sesión -->
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Button Text="Agregar Cliente" Clicked="OnClientesClicked" HorizontalOptions="StartAndExpand"/>
-            <Button Text="Botón 2" HorizontalOptions="EndAndExpand"/>
+            <Label Text="Clientes" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
         </StackLayout>
 
-        <!-- CollectionView de Cursos, con VerticalOptions ajustado -->
-        <CollectionView x:Name="CursosCollectionView" 
-                    ItemsSource="{Binding Clientes}" 
-                    SelectionMode="Single"
-                    VerticalOptions="FillAndExpand">
+        <!-- Barra de navegación -->
+        <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5">
+            <Button Text="Inicio" Clicked="OnHomeClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
+            <Button Text="Clientes" Clicked="OnClientsClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Usuarios" Clicked="OnUsersClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+
+        <!-- Botón para agregar cliente -->
+        <Button Text="Agregar Cliente" Clicked="OnAddClienteClicked" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" />
+
+        <!-- CollectionView para mostrar los clientes -->
+        <CollectionView x:Name="ClientesCollectionView" 
+                        ItemsSource="{Binding Clientes}" 
+                        SelectionMode="Single"
+                        VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <!-- El GestureRecognizer se mueve al Frame -->
                     <Frame BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White" HasShadow="True" CornerRadius="10">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnClienteSelected" CommandParameter="{Binding id}" />
                         </Frame.GestureRecognizers>
                         <StackLayout Orientation="Vertical">
-                            <!-- ID a la izquierda -->
+                            <!-- Nombre del cliente -->
                             <StackLayout Orientation="Horizontal" Padding="5">
-                                <Label Text="{Binding id}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
-                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
+                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
                             </StackLayout>
-                            <!-- Descripción abajo -->
+                            <!-- Curso del cliente -->
                             <Label Text="{Binding curso}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" TextColor="Black" Margin="5,10,5,0"/>
+                            <!-- Enlace para editar cliente -->
+                            <Label Text="Editar cliente" TextColor="Green" HorizontalOptions="EndAndExpand" Padding="5,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnEditClienteTapped" CommandParameter="{Binding id}" />
+                                </Label.GestureRecognizers>
+                            </Label>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
     </StackLayout>
 </ContentPage>

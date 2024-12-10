@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cursos.Views.RegisterUsuario"
+             Title="Agregar Nuevo Usuario">
+
+    <!-- Contenedor principal -->
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Header con título y botón para cerrar sesión -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="Agregar Nuevo Usuario" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+            <!-- Barra de navegación -->
+            <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5">
+                <Button Text="Inicio" Clicked="OnHomeClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
+                <Button Text="Clientes" Clicked="OnClientsClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Usuarios" Clicked="OnUsersClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <!-- Formulario de agregar usuario -->
+            <Frame BackgroundColor="White" Padding="20" BorderColor="Gray" HasShadow="True" CornerRadius="10">
+                <StackLayout Spacing="20">
+
+                    <!-- Campo de nombre -->
+                    <StackLayout>
+                        <Label Text="Nombre" FontSize="14" TextColor="Gray" />
+                        <Entry x:Name="NameEntry" Placeholder="Nombre" Keyboard="Text" />
+                    </StackLayout>
+
+                    <!-- Campo de correo electrónico -->
+                    <StackLayout>
+                        <Label Text="Email" FontSize="14" TextColor="Gray" />
+                        <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
+                    </StackLayout>
+
+                    <!-- Campo de contraseña -->
+                    <StackLayout>
+                        <Label Text="Contraseña" FontSize="14" TextColor="Gray" />
+                        <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+                    </StackLayout>
+
+                    <!-- Botones para crear usuario o cancelar -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="10">
+                        <Button Text="Crear Usuario" BackgroundColor="Blue" TextColor="White" Clicked="OnCreateUserClicked" HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Cancelar" BackgroundColor="Transparent" TextColor="Blue" Clicked="OnCancelClicked" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

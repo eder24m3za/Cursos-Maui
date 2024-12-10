@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cursos.Views.Usuario"
+             Title="Usuarios">
+    <ScrollView BackgroundColor="Gray">
+        <VerticalStackLayout Padding="16">
+            <!-- Header Section -->
+            <HorizontalStackLayout BackgroundColor="#1D4ED8" Padding="16" Spacing="16">
+                <Label Text="Usuarios" FontSize="24" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" />
+                <Button Text="Cerrar Sesión" BackgroundColor="#EF4444" TextColor="White" HorizontalOptions="End" />
+            </HorizontalStackLayout>
+
+            <!-- Navigation Bar -->
+            <HorizontalStackLayout BackgroundColor="#3B82F6" Padding="8">
+                <Button Text="Inicio" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="CenterAndExpand" />
+                <Button Text="Clientes" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="CenterAndExpand" />
+                <Button Text="Usuarios" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="CenterAndExpand" />
+            </HorizontalStackLayout>
+
+            <!-- Main Content -->
+            <VerticalStackLayout Padding="8">
+                <HorizontalStackLayout Spacing="8" VerticalOptions="CenterAndExpand">
+                    <Label Text="Lista de Usuarios" FontSize="18" FontAttributes="Bold" />
+                    <Button Text="Agregar Usuario" BackgroundColor="#22C55E" TextColor="White" HorizontalOptions="EndAndExpand" />
+                </HorizontalStackLayout>
+
+                <!-- User Cards -->
+                <Grid ColumnDefinitions="*,*,*" RowSpacing="8" VerticalOptions="StartAndExpand">
+                    <Frame BackgroundColor="White" Padding="16" BorderColor="Gray" CornerRadius="8" Margin="8">
+                        <VerticalStackLayout>
+                            <Label Text="Ana García" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="ana@example.com" FontSize="14" TextColor="Gray" />
+                            <Button Text="Editar" BackgroundColor="Transparent" TextColor="#10B981" HorizontalOptions="Start" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="White" Padding="16" BorderColor="Gray" CornerRadius="8" Margin="8">
+                        <VerticalStackLayout>
+                            <Label Text="Carlos López" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="carlos@example.com" FontSize="14" TextColor="Gray" />
+                            <Button Text="Editar" BackgroundColor="Transparent" TextColor="#10B981" HorizontalOptions="Start" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="White" Padding="16" BorderColor="Gray" CornerRadius="8" Margin="8">
+                        <VerticalStackLayout>
+                            <Label Text="María Rodríguez" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="maria@example.com" FontSize="14" TextColor="Gray" />
+                            <Button Text="Editar" BackgroundColor="Transparent" TextColor="#10B981" HorizontalOptions="Start" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

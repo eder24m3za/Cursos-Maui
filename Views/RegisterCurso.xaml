@@ -2,12 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterCurso"
-             Title="RegisterCurso">
+             Title="Registrar Curso">
     <StackLayout Padding="30">
+        <!-- Título -->
         <Label Text="Registrar Curso" FontSize="24" HorizontalOptions="Center" />
-        <Entry x:Name="NameEntry" Placeholder="Nombre" />
-        <Entry x:Name="DescriptionEntry" Placeholder="Descripcion" />
+
+        <!-- Entrada para Nombre del Curso -->
+        <Entry x:Name="NameEntry" Placeholder="Nombre del Curso" />
+
+        <!-- Entrada para Descripción del Curso -->
+        <Entry x:Name="DescriptionEntry" Placeholder="Descripción" />
+
+        <!-- Botón para registrar el curso -->
         <Button x:Name="registerButton" Text="Registrar" Clicked="OnRegisterCursoClicked" />
+
+        <!-- Etiqueta para mostrar el resultado -->
         <Label x:Name="ResultLabel" TextColor="Red" />
     </StackLayout>
 </ContentPage>
