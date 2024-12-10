@@ -1,0 +1,127 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\egmr9\\source\\repos\\Cursos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\views\\clientes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:views\\clientes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\views\\cursos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:views\\cursos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\views\\clientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:views\\clientes.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\views\\registercliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:views\\registercliente.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\views\\registercliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:views\\registercliente.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|c:\\users\\egmr9\\source\\repos\\cursos\\service\\url.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4972D79E-0495-483B-A138-322F1C1EECFD}|Cursos.csproj|solutionrelative:service\\url.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Url.cs",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Service\\Url.cs",
+              "RelativeDocumentMoniker": "Service\\Url.cs",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Service\\Url.cs",
+              "RelativeToolTip": "Service\\Url.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T02:08:21.579Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes.xaml",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Clientes.xaml",
+              "RelativeDocumentMoniker": "Views\\Clientes.xaml",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Clientes.xaml",
+              "RelativeToolTip": "Views\\Clientes.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-10T06:21:38.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cursos.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Cursos.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Cursos.xaml.cs",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Cursos.xaml.cs",
+              "RelativeToolTip": "Views\\Cursos.xaml.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAcwFkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T06:21:19.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Clientes.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Clientes.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Clientes.xaml.cs",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\Clientes.xaml.cs",
+              "RelativeToolTip": "Views\\Clientes.xaml.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwEgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T06:21:08.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterCliente.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\RegisterCliente.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\RegisterCliente.xaml.cs",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\RegisterCliente.xaml.cs",
+              "RelativeToolTip": "Views\\RegisterCliente.xaml.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAIwBsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T06:06:02.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterCliente.xaml",
+              "DocumentMoniker": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\RegisterCliente.xaml",
+              "RelativeDocumentMoniker": "Views\\RegisterCliente.xaml",
+              "ToolTip": "C:\\Users\\egmr9\\source\\repos\\Cursos\\Views\\RegisterCliente.xaml",
+              "RelativeToolTip": "Views\\RegisterCliente.xaml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwAcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-10T06:02:05.602Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

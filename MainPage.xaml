@@ -1,0 +1,12 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cursos.MainPage">
+    <StackLayout Padding="30">
+        <Label Text="Login" FontSize="24" HorizontalOptions="Center" />
+        <Entry x:Name="EmailEntry" Placeholder="Email" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
+        <Button Text="Login" Clicked="OnLoginClicked" />
+        <Label x:Name="ResultLabel" TextColor="Red" />
+        <Button Text="Register" Clicked="OnRegisterClicked" />
+    </StackLayout>
+</ContentPage>

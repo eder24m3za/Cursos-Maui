@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cursos.Views.Clientes"
+             Title="Clientes">
+    <!-- Contenedor principal StackLayout -->
+    <StackLayout Padding="10" Spacing="10">
+        <!-- Contenedor de los botones -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Button Text="Agregar Cliente" Clicked="OnClientesClicked" HorizontalOptions="StartAndExpand"/>
+            <Button Text="Botón 2" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+
+        <!-- CollectionView de Cursos, con VerticalOptions ajustado -->
+        <CollectionView x:Name="CursosCollectionView" 
+                    ItemsSource="{Binding Clientes}" 
+                    SelectionMode="Single"
+                    VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!-- El GestureRecognizer se mueve al Frame -->
+                    <Frame BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White" HasShadow="True" CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnClienteSelected" CommandParameter="{Binding id}" />
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Vertical">
+                            <!-- ID a la izquierda -->
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label Text="{Binding id}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
+                            </StackLayout>
+                            <!-- Descripción abajo -->
+                            <Label Text="{Binding curso}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" TextColor="Black" Margin="5,10,5,0"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
