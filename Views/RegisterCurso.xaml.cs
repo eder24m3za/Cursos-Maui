@@ -28,6 +28,38 @@ public partial class RegisterCurso : ContentPage
         }
     }
 
+
+    private async void getCurso(int id)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"cursos/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+
+                // Deserializamos el JSON y obtenemos el curso
+                var responseData = JsonSerializer.Deserialize<JsonObject>(content);
+
+                if (responseData != null && responseData.TryGetPropertyValue("data", out var data))
+                {
+                    var curso = JsonSerializer.Deserialize<Curso>(data.ToString());
+
+                    // Rellenamos los Entry con los valores del curso
+                    NameEntry.Text = curso?.nombre ?? string.Empty;
+                    DescriptionEntry.Text = curso?.descripcion ?? string.Empty;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Manejo de errores
+            ResultLabel.TextColor = Colors.Red;
+            ResultLabel.Text = $"Error al obtener el curso: {ex.Message}";
+        }
+    }
+
     private async void OnRegisterCursoClicked(object sender, EventArgs e)
     {
         var curso = new Curso
@@ -68,37 +100,6 @@ public partial class RegisterCurso : ContentPage
         {
             ResultLabel.TextColor = Colors.Red;
             ResultLabel.Text = $"Error: {ex.Message}";
-        }
-    }
-
-    private async void getCurso(int id)
-    {
-        try
-        {
-            var response = await _httpClient.GetAsync($"cursos/{id}");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-
-                // Deserializamos el JSON y obtenemos el curso
-                var responseData = JsonSerializer.Deserialize<JsonObject>(content);
-
-                if (responseData != null && responseData.TryGetPropertyValue("data", out var data))
-                {
-                    var curso = JsonSerializer.Deserialize<Curso>(data.ToString());
-
-                    // Rellenamos los Entry con los valores del curso
-                    NameEntry.Text = curso?.nombre ?? string.Empty;
-                    DescriptionEntry.Text = curso?.descripcion ?? string.Empty;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            // Manejo de errores
-            ResultLabel.TextColor = Colors.Red;
-            ResultLabel.Text = $"Error al obtener el curso: {ex.Message}";
         }
     }
 }

@@ -2,30 +2,72 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterCliente"
+             BackgroundColor="LightGray"
              Title="Registrar Cliente">
     <StackLayout Padding="30">
         <!-- Título -->
-        <Label Text="Registrar Cliente" FontSize="24" HorizontalOptions="Center" />
+        <Frame BackgroundColor="Blue" Padding="10" CornerRadius="0">
+            <Label Text="Agregar Cliente" 
+               x:Name="titulo"
+               FontSize="24" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+        </Frame>
 
-        <!-- Entrada para Nombre -->
-        <Entry x:Name="NameEntry" Placeholder="Nombre del Cliente" />
+        <Frame BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
 
-        <!-- Entrada para Teléfono -->
-        <Entry x:Name="PhoneEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+                 <!-- Entrada para Nombre -->
+                <Frame Padding="0" BorderColor="Gray" CornerRadius="0" HasShadow="False" BackgroundColor="White">
 
-        <!-- Entrada para Correo -->
-        <Entry x:Name="EmailEntry" Placeholder="Correo Electrónico" Keyboard="Email" />
+                    <Entry x:Name="NameEntry" 
+                           FontSize="14" 
+                            TextColor="Black" 
+                            FontAttributes="Bold"
+                           Placeholder="Nombre del Cliente" />
+                </Frame>
 
-        <!-- Selector de Curso -->
-        <Picker x:Name="CursosPicker"
-                Title="Seleccione un Curso"
-                ItemsSource="{Binding Cursos}" 
-                ItemDisplayBinding="{Binding nombre}" />
+                <!-- Entrada para Teléfono -->
+                <Frame Padding="0" BorderColor="Gray" CornerRadius="0" HasShadow="False" BackgroundColor="White">
 
-        <!-- Botón para registrar cliente -->
-        <Button x:Name="registerButton" Text="Registrar" Clicked="OnRegisterClienteClicked" />
+                    <Entry x:Name="PhoneEntry" 
+                           FontSize="14" 
+                            TextColor="Black" 
+                            FontAttributes="Bold"
+                           Placeholder="Teléfono" 
+                           Keyboard="Telephone" />
+                </Frame>
 
-        <!-- Etiqueta para mostrar mensajes de resultado -->
-        <Label x:Name="ResultLabel" TextColor="Red" />
+                <!-- Entrada para Correo -->
+                <Frame Padding="0" BorderColor="Gray" CornerRadius="0" HasShadow="False" BackgroundColor="White">
+
+                    <Entry x:Name="EmailEntry" 
+                           FontSize="14" 
+                            TextColor="Black" 
+                            FontAttributes="Bold"
+                           Placeholder="Correo Electrónico" 
+                           Keyboard="Email" />
+                </Frame>
+
+                <!-- Selector de Curso -->
+                <Frame Padding="0" BorderColor="Gray" CornerRadius="0" HasShadow="False" BackgroundColor="White">
+
+                    <Picker x:Name="CursosPicker"
+                        Title="Seleccione un Curso"
+                            FontSize="14" 
+                            TextColor="Black" 
+                            FontAttributes="Bold"
+                        ItemsSource="{Binding Cursos}" 
+                        ItemDisplayBinding="{Binding nombre}" />
+                </Frame>
+
+                <!-- Botón para registrar cliente -->
+                <Button x:Name="registerButton" Text="Registrar" Clicked="OnRegisterClienteClicked" />
+
+                <!-- Etiqueta para mostrar mensajes de resultado -->
+                <Label x:Name="ResultLabel" TextColor="Red" />
+            </VerticalStackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

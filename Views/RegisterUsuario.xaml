@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterUsuario"
+             BackgroundColor="LightGray"
              Title="Agregar Nuevo Usuario">
 
     <!-- Contenedor principal -->
@@ -10,7 +11,7 @@
 
             <!-- Header con título y botón para cerrar sesión -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Label Text="Agregar Nuevo Usuario" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                <Label Text="Agregar Nuevo Usuario" x:Name="titulo" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black" HorizontalOptions="StartAndExpand" />
                 <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
             </StackLayout>
 
@@ -28,27 +29,27 @@
                     <!-- Campo de nombre -->
                     <StackLayout>
                         <Label Text="Nombre" FontSize="14" TextColor="Gray" />
-                        <Entry x:Name="NameEntry" Placeholder="Nombre" Keyboard="Text" />
+                        <Entry x:Name="NameEntry" Placeholder="Nombre" Keyboard="Text" TextColor="Black" />
                     </StackLayout>
 
                     <!-- Campo de correo electrónico -->
                     <StackLayout>
                         <Label Text="Email" FontSize="14" TextColor="Gray" />
-                        <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
+                        <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" TextColor="Black" />
                     </StackLayout>
 
                     <!-- Campo de contraseña -->
-                    <StackLayout>
+                    <StackLayout x:Name="PasswordStackLayout">
                         <Label Text="Contraseña" FontSize="14" TextColor="Gray" />
-                        <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+                        <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" TextColor="Black"/>
                     </StackLayout>
 
                     <!-- Botones para crear usuario o cancelar -->
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="10">
-                        <Button Text="Crear Usuario" BackgroundColor="Blue" TextColor="White" Clicked="OnCreateUserClicked" HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Crear Usuario" x:Name="registerButton" BackgroundColor="Blue" TextColor="White" Clicked="OnCreateUserClicked" HorizontalOptions="FillAndExpand"/>
                         <Button Text="Cancelar" BackgroundColor="Transparent" TextColor="Blue" Clicked="OnCancelClicked" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
-
+                    <Label x:Name="ResultLabel" TextColor="Red" />
                 </StackLayout>
             </Frame>
 

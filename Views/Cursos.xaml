@@ -1,14 +1,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cursos.Views.Clientes"
-             Title="Clientes">
-
+             x:Class="Cursos.Views.Cursos"
+             BackgroundColor="LightGray"
+             Title="Cursos">
     <!-- Contenedor principal StackLayout -->
     <StackLayout Padding="10" Spacing="10">
 
         <!-- Header con título y botón para cerrar sesión -->
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Label Text="Clientes" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Label Text="Cursos" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="Black"/>
             <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
         </StackLayout>
 
@@ -20,19 +20,24 @@
         </StackLayout>
 
         <!-- Botón para agregar cliente -->
-        <Button Text="Agregar Cliente" Clicked="OnAddClienteClicked" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand"/>
+        <Button Text="Agregar Curso" Clicked="OnAddCursoClicked" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand"/>
 
         <!-- CollectionView para mostrar los clientes -->
-        <CollectionView x:Name="ClientesCollectionView" ItemsSource="{Binding Clientes}" SelectionMode="Single">
+
+        <CollectionView x:Name="CursosCollectionView" ItemsSource="{Binding Cursos}" SelectionMode="Single" VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White" HasShadow="True" CornerRadius="10">
                         <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnClienteSelected" CommandParameter="{Binding id}" />
+                            <TapGestureRecognizer CommandParameter="{Binding id}" />
                         </Frame.GestureRecognizers>
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding nombre}" FontSize="18" TextColor="Black"/>
-                            <Label Text="{Binding curso}" FontSize="14" TextColor="Gray"/>
+                            <Label Text="{Binding descripcion}" FontSize="14" TextColor="Gray"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Ver Clientes" TextColor="Blue" Margin="0,5,5,0" Background="Transparent"/>
+                                <Button  Text="Editar Curso" Clicked="OnCursoSelected" CommandParameter="{Binding id}" TextColor="Gold" Margin="0,5,5,0" Background="Transparent"/>
+                            </StackLayout>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

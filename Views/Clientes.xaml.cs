@@ -1,8 +1,8 @@
 using Cursos.Models;
 using Cursos.Service;
 using System.Collections.ObjectModel;
-using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json;
 
 namespace Cursos.Views;
 
@@ -11,6 +11,7 @@ public partial class Clientes : ContentPage
     private readonly HttpClient _httpClient;
     private readonly string _url;
     public ObservableCollection<Cliente> clientes { get; set; }
+
     public Clientes()
 	{
 		InitializeComponent();
@@ -37,7 +38,7 @@ public partial class Clientes : ContentPage
                 clientes = JsonSerializer.Deserialize<ObservableCollection<Cliente>>(data.ToString());
 
                 // Asignamos la colección al CollectionView
-                CursosCollectionView.ItemsSource = clientes;
+                ClientesCollectionView.ItemsSource = clientes;
             }
         }
         else
@@ -46,32 +47,78 @@ public partial class Clientes : ContentPage
             //ResultLabel.Text = "Error loading courses.";
         }
     }
-    private async void OnClienteSelected(object sender, TappedEventArgs e)
+
+    private async void OnClienteSelected(object sender, EventArgs e)
     {
 
-        //var cursoId = e.Parameter.ToString();  // Obtén el ID del curso desde el CommandParameter
-        // Realiza alguna acción con el ID del curso, como mostrar detalles
+        var button = sender as Button;
 
-        var clienteId = e.Parameter.ToString();
-
-        await DisplayAlert("Curso Seleccionado", $"ID del curso: {clienteId}", "OK");
-
-        // Intentar convertir a int
-        if (int.TryParse(clienteId, out int result))
+        // Validar que no sea nulo
+        if (button == null)
         {
-            // Si la conversión es exitosa, pasa el valor a RegisterCurso
-            //await Navigation.PushAsync(new RegisterCurso(result));
+            await DisplayAlert("Error", "No se pudo identificar el botón", "OK");
+            return;
+        }
+
+        // Obtener el CommandParameter del botón
+        var clienteId = button.CommandParameter?.ToString();
+
+        // Validar que CommandParameter no sea nulo
+        if (string.IsNullOrEmpty(clienteId))
+        {
+            await DisplayAlert("Error", "ID del curso no encontrado", "OK");
+            return;
+        }
+
+        // Intentar convertir el cursoId a int
+        if (int.TryParse(clienteId, out int id))
+        {
+            // Navegar a la página con el ID del curso
+            await Navigation.PushAsync(new RegisterCliente(id));
         }
         else
         {
-            // Si la conversión falla, manejar el caso de error (por ejemplo, mostrar un mensaje)
             await DisplayAlert("Error", "ID del curso no válido", "OK");
         }
 
     }
 
+    private async void OnEditClienteTapped(object sender, EventArgs e)
+    {
+        var mi = ((MenuItem)sender);
+        var cliente = (Cliente)mi.CommandParameter;
+        //await Navigation.PushAsync(new RegisterCliente(cliente));
+    }
+
     private async void OnAddClienteClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RegisterCurso());
+        await Navigation.PushAsync(new RegisterCliente());
     }
+
+    private async void OnLogoutClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new MainPage());
+    }
+
+    private async void OnHomeClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Cursos());
+    }
+
+    private async void OnClientsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Clientes());
+    }
+
+    private async void OnUsersClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Usuarios());
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        getClientes();
+    }
+
 }

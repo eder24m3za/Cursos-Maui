@@ -71,3 +71,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cursos.Views.RegisterCurso.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\RegisterCurso.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\RegisterCurso.xaml
+
+[C:/Users/egmr9/source/repos/Cursos/Views/RegisterUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Cursos.Views.RegisterUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegisterUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegisterUsuario.xaml
+
+[C:/Users/egmr9/source/repos/Cursos/Views/Usuarios.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Cursos.Views.Usuarios.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios.xaml

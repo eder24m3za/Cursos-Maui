@@ -1,3 +1,6 @@
+C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.Xml.dll
+C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Annotation.pdb
+C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Core.dll
 C:\Users\egmr9\source\repos\Cursos\bin\Debug\net8.0-android\Cursos.runtimeconfig.json
 C:\Users\egmr9\source\repos\Cursos\bin\Debug\net8.0-android\Cursos.dll
 C:\Users\egmr9\source\repos\Cursos\bin\Debug\net8.0-android\Cursos.pdb
@@ -121,6 +124,7 @@ C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.GeneratedMSBu
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.AssemblyInfoInputs.cache
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.AssemblyInfo.cs
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.csproj.CoreCompileInputs.cache
+C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.sourcelink.json
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\XamlC.stamp
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\Cursos.pdb
@@ -287,7 +291,6 @@ C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Syste
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.CoreLib.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.DataContractSerialization.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.Uri.dll
-C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.Xml.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Private.Xml.Linq.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Reflection.DispatchProxy.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\System.Reflection.dll
@@ -382,7 +385,6 @@ C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamar
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Annotation.Experimental.pdb
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Annotation.Jvm.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Annotation.Jvm.pdb
-C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Annotation.pdb
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.AppCompat.AppCompatResources.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.AppCompat.AppCompatResources.pdb
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.AppCompat.dll
@@ -409,7 +411,6 @@ C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamar
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.CoordinatorLayout.pdb
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Core.Core.Ktx.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Core.Core.Ktx.pdb
-C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.Core.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.CursorAdapter.dll
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.CursorAdapter.pdb
 C:\Users\egmr9\source\repos\Cursos\obj\Debug\net8.0-android\android\assets\Xamarin.AndroidX.CustomView.dll

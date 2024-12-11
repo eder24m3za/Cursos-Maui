@@ -1,12 +1,50 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cursos.MainPage">
-    <StackLayout Padding="30">
-        <Label Text="Login" FontSize="24" HorizontalOptions="Center" />
-        <Entry x:Name="EmailEntry" Placeholder="Email" />
-        <Entry x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" />
-        <Button Text="Login" Clicked="OnLoginClicked" />
-        <Label x:Name="ResultLabel" TextColor="Red" />
-        <Button Text="Register" Clicked="OnRegisterClicked" />
-    </StackLayout>
+             x:Class="Cursos.MainPage"
+             BackgroundColor="LightGray"
+             Title="Iniciar Sesión - Cursos Móviles">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <!-- Header -->
+        <Frame BackgroundColor="Blue" Padding="10" CornerRadius="0">
+            <Label Text="Iniciar Sesión" 
+                   FontSize="24" 
+                   TextColor="White" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+        </Frame>
+
+        <!-- Form -->
+        <Frame BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True">
+            <VerticalStackLayout Spacing="15">
+                <!-- Email -->
+                <Label Text="Correo Electrónico" 
+                       FontSize="14" 
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+                <Entry x:Name="EmailEntry" 
+                       Placeholder="Ingrese su correo electrónico" 
+                       TextColor="Black"
+                       Keyboard="Email" />
+
+                <!-- Password -->
+                <Label Text="Contraseña" 
+                       FontSize="14" 
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+                <Entry x:Name="PasswordEntry" 
+                       Placeholder="Ingrese su contraseña" 
+                       TextColor="Black"
+                       IsPassword="True" />
+
+                <!-- Button -->
+                <Button Text="Iniciar Sesión" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        Clicked="OnLoginClicked" />
+                <Label x:Name="ResultLabel" TextColor="Red" />
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
 </ContentPage>

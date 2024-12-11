@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.Clientes"
+             BackgroundColor="LightGray"
              Title="Clientes">
     <!-- Contenedor principal StackLayout -->
     <StackLayout Padding="10" Spacing="10">
 
         <!-- Header con título y botón para cerrar sesión -->
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Label Text="Clientes" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+            <Label Text="Clientes" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="Black" VerticalOptions="Center"/>
             <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
         </StackLayout>
 
@@ -30,22 +31,17 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White" HasShadow="True" CornerRadius="10">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnClienteSelected" CommandParameter="{Binding id}" />
-                        </Frame.GestureRecognizers>
                         <StackLayout Orientation="Vertical">
                             <!-- Nombre del cliente -->
                             <StackLayout Orientation="Horizontal" Padding="5">
-                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="18" TextColor="Black"/>
                             </StackLayout>
                             <!-- Curso del cliente -->
-                            <Label Text="{Binding curso}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" TextColor="Black" Margin="5,10,5,0"/>
+                            <Label Text="{Binding curso}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" FontSize="14" TextColor="Black" Margin="5,10,5,0"/>
                             <!-- Enlace para editar cliente -->
-                            <Label Text="Editar cliente" TextColor="Green" HorizontalOptions="EndAndExpand" Padding="5,0">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnEditClienteTapped" CommandParameter="{Binding id}" />
-                                </Label.GestureRecognizers>
-                            </Label>
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Editar Cliente" Clicked="OnClienteSelected" CommandParameter="{Binding id}" Margin="0,5,5,0"  Background="Transparent" TextColor="Green"/>
+                            </StackLayout>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

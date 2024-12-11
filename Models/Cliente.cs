@@ -12,7 +12,7 @@ namespace Cursos.Models
         public string nombre { get; set; }
         public long telefono { get; set; }
         public string correo { get; set; }
-        public int curso_id { get; set; }
-        public string curso { get; set; }
+        public int? curso_id { get; set; }
+        public string? curso { get; set; }
     }
 }

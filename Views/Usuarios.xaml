@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cursos.Views.Usuarios"
+             BackgroundColor="LightGray"
+             Title="Usuarios">
+    <!-- Contenedor principal StackLayout -->
+    <StackLayout Padding="10" Spacing="10">
+
+        <!-- Header con título y botón para cerrar sesión -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Label Text="Usuarios" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" TextColor="Black" VerticalOptions="Center"/>
+            <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
+        </StackLayout>
+
+        <!-- Barra de navegación -->
+        <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5">
+            <Button Text="Inicio" Clicked="OnHomeClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
+            <Button Text="Clientes" Clicked="OnClientsClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Usuarios" Clicked="OnUsersClicked" TextColor="White" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+
+        <!-- Botón para agregar usuario -->
+        <Button Text="Agregar Usuario" Clicked="OnAddUsuarioClicked" BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" />
+
+        <!-- CollectionView para mostrar los usuarios -->
+        <CollectionView x:Name="UsuariosCollectionView" 
+                        ItemsSource="{Binding Usuarios}" 
+                        SelectionMode="Single"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" Padding="10" Margin="10" BackgroundColor="White" HasShadow="True" CornerRadius="10">
+                        <StackLayout Orientation="Vertical">
+                            <!-- Nombre del usuario -->
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label Text="{Binding nombre}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="18" TextColor="Black"/>
+                            </StackLayout>
+                            <!-- Correo del usuario -->
+                            <Label Text="{Binding correo}" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" FontSize="14" TextColor="Black" Margin="5,10,5,0"/>
+                            <!-- Enlace para editar usuario -->
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Editar Usuario" Clicked="OnUsuarioSelected" CommandParameter="{Binding id}" Margin="0,5,5,0" Background="Transparent" TextColor="Green"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>
