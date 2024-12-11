@@ -27,8 +27,14 @@ public partial class RegisterUsuario : ContentPage
             _id = id.Value;
             getCliente(id.Value);
             registerButton.Text = "Actualizar";
-            titulo.Text = "Actualizar Usuario";
             PasswordStackLayout.IsVisible = false;
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Actualizar Usuario";
+        }
+        else
+        {
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Registrar Usuario";
         }
     }
 

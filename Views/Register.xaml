@@ -7,7 +7,7 @@
 
     <VerticalStackLayout Padding="10" Spacing="10">
         <!-- Header -->
-        <Frame BackgroundColor="Green" Padding="10" CornerRadius="0">
+        <Frame BackgroundColor="Blue" Padding="10" CornerRadius="0">
             <Label Text="Registro" 
                    FontSize="24" 
                    TextColor="White" 
@@ -24,6 +24,7 @@
                        TextColor="Black" 
                        FontAttributes="Bold" />
                 <Entry x:Name="NameEntry" 
+                       TextColor="Black"
                        Placeholder="Ingrese su nombre" />
 
                 <!-- Email -->
@@ -32,6 +33,7 @@
                        TextColor="Black" 
                        FontAttributes="Bold" />
                 <Entry x:Name="EmailEntry" 
+                       TextColor="Black"
                        Placeholder="Ingrese su correo electrónico" 
                        Keyboard="Email" />
 
@@ -41,12 +43,13 @@
                        TextColor="Black" 
                        FontAttributes="Bold" />
                 <Entry x:Name="PasswordEntry" 
+                       TextColor="Black"
                        Placeholder="Ingrese su contraseña" 
                        IsPassword="True" />
 
                 <!-- Button -->
                 <Button Text="Registrar" 
-                        BackgroundColor="Green" 
+                        BackgroundColor="Blue" 
                         TextColor="White" 
                         Clicked="OnRegisterClicked" />
             </VerticalStackLayout>

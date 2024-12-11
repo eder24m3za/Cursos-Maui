@@ -25,6 +25,13 @@ public partial class RegisterCurso : ContentPage
             _id = id.Value;
             getCurso(id.Value);
             registerButton.Text = "Actualizar";
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Actualizar Curso";
+        }
+        else
+        {
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Registrar Curso";
         }
     }
 

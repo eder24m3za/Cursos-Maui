@@ -16,10 +16,21 @@ namespace Cursos
         public MainPage()
         {
             InitializeComponent();
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Iniciar Sesión";
+            //Shell.Current.Title = "Iniciar Sesión";
             _httpClient = new HttpClient();
             Url url = new Url();
             _url = url.url;
             _httpClient.BaseAddress = new Uri(_url);
+            bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
+
+            if (isLoggedIn)
+            {
+
+                //Cursos.Views.Cursos Cursos = new Cursos.Views.Cursos();
+                Navigation.PushAsync(new Cursos.Views.Cursos());
+            }
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -42,6 +53,10 @@ namespace Cursos
 
                     ResultLabel.TextColor = Colors.Green;
                     ResultLabel.Text = $"Login successful!";
+
+                    bool isLoggedIn = true;
+                    Preferences.Set("IsLoggedIn", isLoggedIn);
+
                     await Navigation.PushAsync(new Cursos.Views.Cursos());
                 }
                 else
@@ -61,6 +76,18 @@ namespace Cursos
         {
             await Navigation.PushAsync(new Register());
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            bool isLoggedIn = Preferences.Get("IsLoggedIn", false);
+
+            if (isLoggedIn)
+            {
+
+                Navigation.PushAsync(new Cursos.Views.Cursos());
+            }
         }
     }
 

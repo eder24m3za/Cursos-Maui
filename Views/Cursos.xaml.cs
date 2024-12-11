@@ -17,6 +17,8 @@ public partial class Cursos : ContentPage
     public Cursos()
     {
         InitializeComponent();
+        var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+        titleLabel.Text = "Cursos";
         _httpClient = new HttpClient();
         Url url = new Url();
         _url = url.url;
@@ -83,6 +85,40 @@ public partial class Cursos : ContentPage
         else
         {
             await DisplayAlert("Error", "ID del curso no válido", "OK");
+        }
+    }
+
+    private async void OnClienteSelected(object sender, EventArgs e)
+    {
+        // Obtener el botón que disparó el evento
+        var button = sender as Button;
+
+        // Validar que no sea nulo
+        if (button == null)
+        {
+            await DisplayAlert("Error", "No se pudo identificar el botón", "OK");
+            return;
+        }
+
+        // Obtener el CommandParameter del botón
+        var clienteId = button.CommandParameter?.ToString();
+
+        // Validar que CommandParameter no sea nulo
+        if (string.IsNullOrEmpty(clienteId))
+        {
+            await DisplayAlert("Error", "ID del cliente no encontrado", "OK");
+            return;
+        }
+
+        // Intentar convertir el cursoId a int
+        if (int.TryParse(clienteId, out int id))
+        {
+            // Navegar a la página con el ID del curso
+            await Navigation.PushAsync(new Clientes(id));
+        }
+        else
+        {
+            await DisplayAlert("Error", "ID del cliente no válido", "OK");
         }
     }
 

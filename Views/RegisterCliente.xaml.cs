@@ -29,6 +29,13 @@ public partial class RegisterCliente : ContentPage
             getCliente(id.Value);
             registerButton.Text = "Actualizar";
             titulo.Text = "Actualizar Cliente";
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Actualizar Cliente";
+        }
+        else
+        {
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Registrar Cliente";
         }
         getCursos();
     }

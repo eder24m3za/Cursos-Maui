@@ -3,28 +3,66 @@ using Cursos.Service;
 using System.Collections.ObjectModel;
 using System.Text.Json.Nodes;
 using System.Text.Json;
-
 namespace Cursos.Views;
 
 public partial class Clientes : ContentPage
 {
     private readonly HttpClient _httpClient;
     private readonly string _url;
+    private int _idCurso = 0;
     public ObservableCollection<Cliente> clientes { get; set; }
 
-    public Clientes()
+    public Clientes(int? idCurso = null)
 	{
 		InitializeComponent();
         _httpClient = new HttpClient();
         Url url = new Url();
         _url = url.url;
         _httpClient.BaseAddress = new Uri(_url);
-        getClientes();
+        if (idCurso.HasValue)
+        {
+            _idCurso = idCurso.Value;
+            getClientesByIdCurso(_idCurso);
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = $"Clientes del curso {_idCurso}";
+        }
+        else
+        {
+            var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+            titleLabel.Text = "Clientes";
+            getClientes();
+        }
     }
 
     private async void getClientes()
     {
         var response = _httpClient.GetAsync("clientes").Result;
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+
+            // Deserializamos el JSON completo, y luego tomamos solo la propiedad 'data'
+            var responseData = JsonSerializer.Deserialize<JsonObject>(content);
+
+            if (responseData != null && responseData.TryGetPropertyValue("data", out var data))
+            {
+                // Deserializamos la propiedad 'data' en una colección de Cursos
+                clientes = JsonSerializer.Deserialize<ObservableCollection<Cliente>>(data.ToString());
+
+                // Asignamos la colección al CollectionView
+                ClientesCollectionView.ItemsSource = clientes;
+            }
+        }
+        else
+        {
+            //ResultLabel.TextColor = Colors.Red;
+            //ResultLabel.Text = "Error loading courses.";
+        }
+    }
+
+    private async void getClientesByIdCurso(int idCurso)
+    {
+        var response = _httpClient.GetAsync($"cursos/clientes/{idCurso}").Result;
         if (response.IsSuccessStatusCode)
         {
             var content = await response.Content.ReadAsStringAsync();
@@ -118,7 +156,14 @@ public partial class Clientes : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        getClientes();
+        if (_idCurso != 0)
+        {
+            getClientesByIdCurso(_idCurso);
+        }
+        else
+        {
+            getClientes();
+        }
     }
 
 }

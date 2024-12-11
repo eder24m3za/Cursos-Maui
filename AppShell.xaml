@@ -5,11 +5,34 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Cursos"
     Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="#2563EB"
+    Shell.TitleColor="White"
     Title="Cursos">
 
+    <!-- Vista personalizada del encabezado -->
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="1*,1*" Padding="10">
+            <Label x:Name="titleShell" 
+                   Text="Cursos"
+                   HorizontalOptions="Start" 
+                   VerticalTextAlignment="Center"
+                   FontSize="20"
+                   TextColor="White" />
+            <Button Text="Cerrar sesión" 
+                    x:Name="LogoutButton"
+                    Grid.Column="1" 
+                    BackgroundColor="Red" 
+                    TextColor="White"
+                    HorizontalOptions="End"
+                    Clicked="OnLogoutClicked" />
+        </Grid>
+    </Shell.TitleView>
+
+    <!-- Contenido del Shell -->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
 
 </Shell>

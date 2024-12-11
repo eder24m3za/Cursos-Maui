@@ -42,6 +42,12 @@
                         BackgroundColor="Blue" 
                         TextColor="White" 
                         Clicked="OnLoginClicked" />
+                
+                <Button Text="Registrarse" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        Clicked="OnRegisterClicked" />
+                
                 <Label x:Name="ResultLabel" TextColor="Red" />
 
             </VerticalStackLayout>

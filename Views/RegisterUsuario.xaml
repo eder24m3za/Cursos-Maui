@@ -3,17 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterUsuario"
              BackgroundColor="LightGray"
-             Title="Agregar Nuevo Usuario">
+             Title="Usuario - Cursos Móviles">
 
     <!-- Contenedor principal -->
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
-
-            <!-- Header con título y botón para cerrar sesión -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Label Text="Agregar Nuevo Usuario" x:Name="titulo" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black" HorizontalOptions="StartAndExpand" />
-                <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
-            </StackLayout>
 
             <!-- Barra de navegación -->
             <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5">

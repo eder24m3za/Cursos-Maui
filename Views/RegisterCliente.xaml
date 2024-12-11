@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterCliente"
              BackgroundColor="LightGray"
-             Title="Registrar Cliente">
+             Title="Cliente - Cursos Móviles">
     <StackLayout Padding="30">
         <!-- Título -->
         <Frame BackgroundColor="Blue" Padding="10" CornerRadius="0">

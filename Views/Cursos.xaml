@@ -2,15 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.Cursos"
              BackgroundColor="LightGray"
-             Title="Cursos">
+             Title="Cursos - Cursos Móviles">
     <!-- Contenedor principal StackLayout -->
     <StackLayout Padding="10" Spacing="10">
-
-        <!-- Header con título y botón para cerrar sesión -->
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Label Text="Cursos" FontSize="24" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="Black"/>
-            <Button Text="Cerrar Sesión" Clicked="OnLogoutClicked" BackgroundColor="Red" TextColor="White" HorizontalOptions="EndAndExpand" />
-        </StackLayout>
 
         <!-- Barra de navegación -->
         <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5">
@@ -35,7 +29,7 @@
                             <Label Text="{Binding nombre}" FontSize="18" TextColor="Black"/>
                             <Label Text="{Binding descripcion}" FontSize="14" TextColor="Gray"/>
                             <StackLayout Orientation="Horizontal">
-                                <Button Text="Ver Clientes" TextColor="Blue" Margin="0,5,5,0" Background="Transparent"/>
+                                <Button Text="Ver Clientes" Clicked="OnClienteSelected" CommandParameter="{Binding id}" TextColor="Blue" Margin="0,5,5,0" Background="Transparent"/>
                                 <Button  Text="Editar Curso" Clicked="OnCursoSelected" CommandParameter="{Binding id}" TextColor="Gold" Margin="0,5,5,0" Background="Transparent"/>
                             </StackLayout>
                         </StackLayout>

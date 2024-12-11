@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cursos.Views.RegisterCurso"
              BackgroundColor="LightGray"
-             Title="Registrar Curso">
+             Title="Curso - Cursos Móviles">
 
     <VerticalStackLayout Padding="10" Spacing="10">
 
@@ -31,11 +31,13 @@
 
                     <!-- Entrada para Descripción del Curso -->
                     <Frame Padding="0" BorderColor="Gray" CornerRadius="0" HasShadow="False" BackgroundColor="White">
-                        <Entry x:Name="DescriptionEntry" 
-                           FontSize="14" 
+                        <Editor x:Name="DescriptionEntry" 
+                            FontSize="16" 
                             TextColor="Black" 
-                            FontAttributes="Bold"
-                           Placeholder="Descripción" />
+                            FontAttributes="Bold" 
+                            Placeholder="Descripción" 
+                            AutoSize="TextChanges" 
+                            HeightRequest="150" />
                     </Frame>
 
                     <!-- Botón para registrar el curso -->

@@ -15,6 +15,8 @@ public partial class Usuarios : ContentPage
     public Usuarios()
 	{
 		InitializeComponent();
+        var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+        titleLabel.Text = "Usuarios";
         _httpClient = new HttpClient();
         Url url = new Url();
         _url = url.url;

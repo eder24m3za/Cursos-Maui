@@ -12,6 +12,8 @@ public partial class Register : ContentPage
     public Register()
 	{
 		InitializeComponent();
+        var titleLabel = (Label)Shell.Current.FindByName("titleShell");
+        titleLabel.Text = "Registrarse";
         _httpClient = new HttpClient();
         Url url = new Url();
         _url = url.url;
